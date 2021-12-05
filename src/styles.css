@@ -1,0 +1,81 @@
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+    display: none;
+}
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+*{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+
+.home-page, .posts-page{
+    margin: 5vh 10vw;
+}
+
+.top-section{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding:1vh 0;   
+}
+
+.title{
+    font-size: 50px;
+    font-weight: bold;
+    color:#399399;
+}
+
+.right-section{
+    width: 415px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:flex-end;
+}
+
+.filter{
+    margin-left: 10px;
+}
+
+.input{
+    width: 100%;
+    padding: 0 5px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.new-post-button{
+    padding-bottom: 8px;
+}
+
+.new-post-form{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 60vh;
+
+}
+
+.buttons{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.sub-title{
+    font-size: 20px;
+    font-weight: 500;
+    color:#399399;
+}
+
+.no-results{
+    margin:5vh;
+    font-size: 25px;
+    margin-left:45%;
+}
