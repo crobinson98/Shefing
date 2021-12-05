@@ -12,13 +12,14 @@ const ColorButton = styled(Button)(({ theme}) => ({
     },
   }));
 
-export default function CustomButton({content,handleClick,id=null,width=null}) {
+export default function CustomButton({content,handleClick,id=null,width=null,type=null}) {
     return (
         <ColorButton 
           aria-describedby={id} 
           variant="contained" 
           onClick={handleClick}
           sx={{width:width}}
+          type={type}
         >
         {content}
         </ColorButton>

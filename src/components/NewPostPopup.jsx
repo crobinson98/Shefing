@@ -5,7 +5,7 @@ import NewPostForm from './NewPostForm';
 import Button from './CustomButton';
 
 
-export default function NewPostPopup({handleNewPost}) {
+export default function NewPostPopup() {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -36,9 +36,10 @@ export default function NewPostPopup({handleNewPost}) {
                 vertical: 'top',
                 horizontal: 'right',
               }}
+              sx={{visibility:anchorEl?'visible':"hidden"}}
         >
-            <Typography sx={{ p:10, padding:'5vh'}}>
-                <NewPostForm handleClose={handleClose} handlePost={handleNewPost}/>
+            <Typography component={'span'} variant={'body2'}>
+                <NewPostForm handleClose={handleClose}/>
             </Typography>
       </Popover>
     </div>

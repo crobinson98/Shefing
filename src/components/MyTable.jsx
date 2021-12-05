@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react'
+import React from 'react'
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -12,19 +12,12 @@ import Typography from '@mui/material/Typography';
 
 export default function MyTable({rows}) {
 
-    const [noResults,setNoResults]=useState(false);
-
-    useEffect(()=>{
-        setTimeout(()=>setNoResults(rows.length ? false : true),500)
-    },[])
-
     const Navigate = useNavigate();
     const handelRowClick = (id)=>{
         Navigate(`/posts/${id}`)
     }
 
     return (
-        <>
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
@@ -38,7 +31,7 @@ export default function MyTable({rows}) {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {rows.map((row) => (
+                    {rows.map((row) => 
                         <TableRow 
                             hover 
                             key={row.id}
@@ -46,18 +39,16 @@ export default function MyTable({rows}) {
                             onClick={() => handelRowClick(row.id)}
                         >
                             {['name','email','cname'].map(item=>
-                                <TableCell>
+                                <TableCell key={item}>
                                     <Typography sx={{ mb: 1.5 }} color="text.secondary">
                                     {row[item]}  
                                     </Typography>
                                 </TableCell>
                             )}
                         </TableRow>
-                    ))}
+                    )}
                 </TableBody>
             </Table>
         </TableContainer>
-        <div className="no-results sub-title" style={{visibility: noResults ? 'visible':'hidden'}}>no results</div>
-        </>
     )
 }
