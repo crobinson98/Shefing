@@ -3,7 +3,7 @@ import Filter from './Filter';
 import NewPostPopup from './NewPostPopup';
 
 
-export default function PostsTopSection({setFilter}) {
+export default function PostsTopSection({setFilter,filter}) {
 
     return (
         <div className="top-section">
@@ -12,6 +12,7 @@ export default function PostsTopSection({setFilter}) {
                 <Filter
                     filterName={'post title'}
                     setFilter={setFilter}
+                    filter={filter}
                 />
                 <NewPostPopup/>
             </div>

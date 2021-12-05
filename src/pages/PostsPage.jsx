@@ -44,13 +44,14 @@ export default function PostsPage() {
             title,
             body
         }
-        setPosts(prev=>[...prev,newPost])
+        setPosts(prev=>[...prev,newPost]);
+        setFilter('');
     }
 
     return (
         <NewPostContext.Provider value={handleNewPost}>
             <div className="posts-page">
-                <PostsTopSection setFilter={setFilter}/>
+                <PostsTopSection setFilter={setFilter} filter={filter}/>
                     {postsToRender.map(item=>
                         <Post
                             key={item.id}
