@@ -37,6 +37,7 @@ export default function MyTable({rows}) {
                             key={row.id}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                             onClick={() => handelRowClick(row.id)}
+                            sx={{cursor:'pointer'}}
                         >
                             {['name','email','cname'].map(item=>
                                 <TableCell key={item}>
