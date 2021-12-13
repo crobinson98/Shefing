@@ -20,13 +20,9 @@ export default function HomePage() {
     },[]);
 
     useEffect(() => {
-        setRowsToRender(rows.filter(item=>item.name.toLocaleLowerCase().includes(nameFilter.toLocaleLowerCase())))
-    }, [nameFilter,rows])
-
-    useEffect(() => {
-        setRowsToRender(rows.filter(item=>item.email.toLocaleLowerCase().includes(emailFilter.toLocaleLowerCase())))
-    }, [emailFilter,rows])
-
+        setRowsToRender(rows.filter(item=>item.name.toLocaleLowerCase().includes(nameFilter.toLocaleLowerCase())&&
+          item.email.toLocaleLowerCase().includes(emailFilter.toLocaleLowerCase())))
+    }, [nameFilter,emailFilter,rows])
 
     function setRowsfunc(rows){
 
